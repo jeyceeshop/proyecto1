@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <defs>
+    <radialGradient id="fondo"><stop stop-color="#143d72"/><stop offset="1" stop-color="#071426" stop-opacity="0"/></radialGradient>
+    <linearGradient id="borde" x1="170" y1="115" x2="455" y2="435" gradientUnits="userSpaceOnUse"><stop stop-color="#99f7ff"/><stop offset=".48" stop-color="#00d9ff"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <linearGradient id="interior" x2="0" y2="1"><stop stop-color="#173d68"/><stop offset="1" stop-color="#091a35"/></linearGradient>
+    <pattern id="cuadricula" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#4acfff" stroke-opacity=".16"/></pattern>
+    <clipPath id="recorte"><path d="M320 118c40 25 77 32 108 36v90c0 73-45 128-108 160-63-32-108-87-108-160v-90c31-4 68-11 108-36z"/></clipPath>
+  </defs>
+  <ellipse cx="323" cy="257" rx="310" ry="254" fill="url(#fondo)"/>
+  <rect x="34" y="30" width="572" height="460" rx="20" fill="url(#cuadricula)" opacity=".53"/>
+  <g stroke="#337ca9" stroke-opacity=".55">
+    <circle cx="320" cy="260" r="219" stroke-dasharray="2 6"/><circle cx="320" cy="260" r="182"/><circle cx="320" cy="260" r="158" stroke-dasharray="6 9"/>
+    <path d="M72 137h78l41 41h34M61 316h92l58-58M117 418h69l49-49h46m343-226h-71l-54 58h-74m161 131h-60l-57-56h-46m136 128h-54l-59-54h-55M321 24v64m0 343v65"/>
+  </g>
+  <g fill="#0b2447" stroke="#53dff8" stroke-width="2"><circle cx="72" cy="137" r="7"/><circle cx="61" cy="316" r="6"/><circle cx="117" cy="418" r="6"/><circle cx="624" cy="143" r="6"/><circle cx="586" cy="332" r="7"/><circle cx="559" cy="404" r="5"/><circle cx="321" cy="24" r="5"/><circle cx="321" cy="496" r="5"/></g>
+  <g fill="#86e9ff"><circle cx="100" cy="219" r="2"/><circle cx="182" cy="86" r="3"/><circle cx="480" cy="116" r="2"/><circle cx="553" cy="235" r="3"/><circle cx="462" cy="441" r="2"/><circle cx="228" cy="467" r="2"/></g>
+  <path d="M320 99c45 28 88 37 125 41v103c0 84-52 147-125 181-73-34-125-97-125-181V140c37-4 80-13 125-41z" stroke="#12c6ff" stroke-opacity=".22" stroke-width="13"/>
+  <path d="M320 118c40 25 77 32 108 36v90c0 73-45 128-108 160-63-32-108-87-108-160v-90c31-4 68-11 108-36z" fill="url(#interior)" stroke="url(#borde)" stroke-width="3"/>
+  <g clip-path="url(#recorte)">
+    <rect x="207" y="138" width="227" height="270" fill="url(#cuadricula)"/>
+    <path class="scan" d="M211 163h219" stroke="#7febff" stroke-width="2" opacity=".6"/>
+  </g>
+  <circle cx="320" cy="256" r="66" stroke="#61dfff" stroke-opacity=".34" stroke-dasharray="3 5"/>
+  <circle cx="320" cy="256" r="52" fill="#0b2447" stroke="#1f9ac2"/>
+  <path d="m292 257 19 19 38-41" stroke="#88f4ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <style>@media(prefers-reduced-motion:no-preference){.scan{animation:scan 4s ease-in-out infinite alternate}@keyframes scan{to{transform:translateY(200px)}}}</style>
+</svg>
