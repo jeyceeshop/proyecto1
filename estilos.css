@@ -301,3 +301,13 @@ dialog::backdrop { background: #040b16b8; }
 @media (max-width: 719px) {
   .signal-feature figure { order: 2; }
 }
+
+/* Imágenes editoriales y revisión de alertas. */
+.home .hero-art img { border-radius: 18px; border: 1px solid var(--borde); box-shadow: 0 20px 64px #020e2f40; }
+.module-card > img, .signal-feature img { object-fit: cover; }
+.case-meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 10px 0; font-size: .87rem; }
+.case-meta dt { font-weight: 750; }
+.case-meta dd { color: var(--secundario); overflow-wrap: anywhere; }
+.case-events { width: 100%; border-collapse: collapse; margin-top: 13px; font-size: .84rem; }
+.case-events th, .case-events td { text-align: left; border-bottom: 1px solid var(--borde); padding: 6px 5px; overflow-wrap: anywhere; }
+#lab-respuesta { margin: 4px 0 12px; }

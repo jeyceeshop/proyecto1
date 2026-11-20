@@ -45,6 +45,8 @@
     adjunto: 'Archivo adjunto inesperado',
     datos: 'Solicitud de datos confidenciales',
     promesa: 'Promesa poco realista',
+    pico: 'Intentos fallidos fuera del patrón habitual',
+    contexto: 'Actividad inesperada que requiere confirmación',
   };
   // Los ejemplos son ficticios y los dominios .invalid se muestran como texto.
   const casos = [
@@ -72,6 +74,16 @@
       mensaje: 'Ganaste un teléfono aunque no participaste. Envía los datos de tu tarjeta antes de un minuto para reclamarlo.',
       senales: { promesa: 'El anuncio ofrece un premio sin participación previa.', datos: 'La tarjeta contiene información financiera que el anuncio intenta obtener.', urgencia: 'El plazo de un minuto presiona al visitante.' },
       consejo: 'Verifica las condiciones en el sitio oficial de la marca y reporta anuncios sospechosos.' },
+    { nombre: 'Pico de accesos fallidos', origen: 'Registro de autenticación · cuenta de práctica',
+      mensaje: 'El sistema detectó varios rechazos seguidos. La cuenta suele iniciar sesión una vez durante este tramo del día. Revisa si el patrón justifica elevar la alerta.',
+      registro: [['08:42', 'Acceso habitual', 'Permitido'], ['10:11', '6 intentos en 2 minutos', 'Rechazados'], ['10:13', 'Nuevo acceso a la cuenta', 'Permitido']],
+      senales: { pico: 'Los rechazos se concentran en una ventana corta y se apartan del patrón habitual.', contexto: 'El acceso posterior requiere confirmación con la persona titular.' },
+      accion: 'reportar', consejo: 'Conserva el reporte y solicita al equipo de seguridad verificar si el titular reconoce el acceso.' },
+    { nombre: 'Cambio de hora en el portal', origen: 'Registro de acceso · cuenta de práctica',
+      mensaje: 'La cuenta ingresó fuera del horario habitual, con el mismo dispositivo. La institución había programado un turno nocturno. Todavía falta confirmar si el acceso correspondió a esa persona.',
+      registro: [['16:55', 'Acceso habitual', 'Permitido'], ['21:30', 'Inicio del turno previsto', 'Programado'], ['21:40', 'Acceso del dispositivo habitual', 'Permitido']],
+      senales: { contexto: 'La hora se aparta del patrón, pero el turno y el dispositivo ofrecen una explicación plausible.' },
+      consejo: 'Confirma la actividad con la persona titular por un canal oficial antes de tratarla como incidente.' },
   ];
 
   const $ = selector => document.querySelector(selector);
@@ -138,6 +150,30 @@
     $('#lab-mensaje-titulo').textContent = caso.nombre;
     $('#lab-mensaje-origen').textContent = caso.origen;
     $('#lab-mensaje-cuerpo').textContent = caso.mensaje;
+    $('#lab-metadatos').replaceChildren(
+      crear('dt', 'Caso'), crear('dd', 'ITSE-' + String(selector.selectedIndex + 1).padStart(2, '0')),
+      crear('dt', 'Fuente'), crear('dd', caso.registro ? 'Registro de acceso' : 'Comunicación reportada'),
+      crear('dt', 'Estado'), crear('dd', 'Por revisar'),
+    );
+    const registro = $('#lab-registro');
+    registro.hidden = !caso.registro;
+    registro.replaceChildren();
+    if (caso.registro) {
+      const tabla = crear('table', '', 'case-events');
+      const cabecera = tabla.createTHead().insertRow();
+      ['Hora', 'Evento', 'Resultado'].forEach(texto => {
+        const columna = crear('th', texto);
+        columna.scope = 'col';
+        cabecera.append(columna);
+      });
+      const cuerpo = tabla.createTBody();
+      caso.registro.forEach(evento => {
+        const fila = cuerpo.insertRow();
+        evento.forEach(dato => { fila.insertCell().textContent = dato; });
+      });
+      registro.append(tabla);
+    }
+    $('#lab-respuesta').value = '';
     formulario.querySelectorAll('input').forEach(opcion => { opcion.checked = false; });
     resultado.hidden = true;
   }
@@ -162,6 +198,12 @@
     }
     $('#lab-detalle').replaceChildren(...detalle);
     $('#lab-recomendacion').textContent = 'Recomendación: ' + caso.consejo;
+    const accion = $('#lab-respuesta').value;
+    const esperada = caso.accion || 'verificar';
+    const mensaje = accion === esperada ? 'Tu primera acción coincide con la respuesta recomendada para el caso.'
+      : accion === 'continuar' ? 'Continuar sin verificar dejaría pasar indicios que requieren revisión.'
+        : 'Tu acción puede ayudar, pero la recomendación indica qué conviene priorizar en este caso.';
+    $('#lab-respuesta-resultado').textContent = mensaje;
     resultado.hidden = false;
     tituloResultado.focus();
   });

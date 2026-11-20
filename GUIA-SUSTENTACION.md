@@ -48,7 +48,7 @@ Usen este reparto para una exposición de seis minutos que incluya el laboratori
 | 0:00–1:00 | 1 | Presentar el problema de los fraudes y robos de información. Explicar el objetivo general y cómo se integra el contenido con el portafolio. |
 | 1:00–2:00 | 2 | Mostrar las seis amenazas. Usar phishing y ransomware para explicar una diferencia, un posible efecto y una medida de prevención. |
 | 2:00–3:00 | 3 | Mostrar el gráfico de intentos fallidos. Explicar cómo se integran los registros, se identifica el pico y se valida la alerta de seguridad. Mencionar un posible falso positivo. |
-| 3:00–4:30 | 4 | Abrir el laboratorio, elegir **Promoción instantánea**, marcar una señal y pulsar **Analizar**. Explicar la diferencia entre la puntuación y el nivel del caso. |
+| 3:00–4:30 | 4 | Abrir el laboratorio, elegir **Pico de accesos fallidos**, revisar la tabla, marcar un indicio y elegir la primera acción. Pulsar **Analizar** y comentar la recomendación. |
 | 4:30–6:00 | 5 | Mostrar una práctica de protección, el portafolio y sus evidencias disponibles. Cerrar con GitHub y un aprendizaje real del equipo. |
 
 El laboratorio compara casillas con reglas escritas en JavaScript. Por ejemplo, si el caso de la promoción tiene tres señales y el visitante reconoce una, la interfaz muestra **1 de 3**. El nivel del caso sigue siendo **Múltiples señales**. Esta distinción permite explicar cómo se programó el resultado y por qué una puntuación baja del visitante jamás convierte el mensaje en seguro.

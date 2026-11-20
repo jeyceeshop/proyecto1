@@ -14,7 +14,7 @@ Como alternativa, ejecuta `python -m http.server 8000` desde la raíz y abre el 
 
 - `index.html` es la portada del proyecto, con accesos ilustrados a los tres módulos.
 - `ciberseguridad.html` reúne la teoría, las amenazas y las referencias.
-- `laboratorio.html` contiene los seis casos interactivos.
+- `laboratorio.html` contiene los ocho casos interactivos.
 - `portafolio.html` reúne el equipo, las habilidades, la galería, la línea de tiempo, la reflexión y el contacto.
 - `js/sitio.js` comparte la navegación móvil, el año del pie y los enlaces a secciones entre páginas.
 - `estilos.css` contiene la paleta y los estilos responsive. Cambia `--acento` para modificar el cian del sitio.
@@ -86,6 +86,8 @@ Probar con una cuenta de estudiante y otra de coordinación. Confirmar que una c
 
 El bloque **Ciberseguridad** presenta el problema de los fraudes y el robo de información, los objetivos del proyecto y seis tipos de amenazas: phishing, malware, ransomware, robo de identidad, ingeniería social y enlaces fraudulentos. Incluye además un diagrama del análisis asistido por IA, buenas prácticas y un glosario desplegable.
 
-El laboratorio usa JavaScript puro en `js/educacion.js`. Un selector carga seis ejemplos ficticios. Al pulsar **Analizar**, `FormData` recoge las casillas y un `Set` permite compararlas con los indicadores definidos en el caso. La interfaz explica las señales reconocidas y las que faltaron, muestra un nivel orientativo basado en todas las señales del escenario y recomienda cómo actuar. Los casos se procesan en el navegador y el simulador no envía ni guarda las respuestas.
+El laboratorio usa JavaScript puro en `js/educacion.js`. Un selector carga ocho ejemplos ficticios. Al pulsar **Analizar**, `FormData` recoge las casillas y un `Set` permite compararlas con los indicadores definidos en el caso. La interfaz explica las señales reconocidas y las que faltaron, muestra un nivel orientativo basado en todas las señales del escenario y recomienda cómo actuar. Los casos se procesan en el navegador y el simulador no envía ni guarda las respuestas.
 
 Se trata de una demostración basada en reglas. Al desarrollarla se aplicaron conceptos de eventos del DOM, renderizado de resultados, modelado de señales y accesibilidad con controles de formulario y foco en el resultado. Un proyecto posterior con IA requeriría un servicio de análisis separado, datos autorizados y minimizados, validación con ejemplos etiquetados, medición de falsos positivos y negativos y revisión humana. Las credenciales de ese servicio se manejarían en el servidor.
+
+Las imágenes de estilo fotográfico se generaron para ilustrar el contexto del proyecto. Las personas y los espacios representados no corresponden al equipo del ITSE. El laboratorio incluye comunicaciones y registros de acceso ficticios. El visitante revisa el contexto, marca los indicios y elige una acción antes de consultar el resultado.

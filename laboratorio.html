@@ -31,32 +31,42 @@
       <section class="education-block lab card" id="laboratorio" aria-labelledby="lab-titulo">
           <div class="page-intro"><div><p class="eyebrow">Práctica interactiva</p>
           <h1 id="lab-titulo">Laboratorio de detección de amenazas</h1>
-          <p>Lee un caso ficticio y marca las señales que reconoces. JavaScript compara tu selección con reglas programadas. El laboratorio no utiliza un modelo de IA ni solicita datos personales.</p></div><img src="img/recursos/mensaje.svg" width="600" height="320" alt="Mensaje ficticio bajo revisión con una señal de alerta"></div>
+          <p>Revisa una alerta como lo haría un analista: lee el reporte inicial, compara los indicios, elige una respuesta y revisa la explicación. Los casos son ficticios y el análisis se basa en reglas locales.</p></div><img src="img/recursos/correo.webp" width="768" height="512" alt="Equipo portátil con una aplicación de correo abierta"></div>
           <form id="lab-form" hidden>
             <div class="lab-layout">
               <div>
-                <label for="lab-caso">Caso de ejemplo</label>
+                <label for="lab-caso">Alerta asignada</label>
                 <select id="lab-caso"></select>
                 <article class="lab-message" aria-labelledby="lab-mensaje-titulo">
-                  <h4 id="lab-mensaje-titulo"></h4>
+                  <h2 id="lab-mensaje-titulo"></h2>
+                  <dl class="case-meta" id="lab-metadatos"></dl>
                   <p id="lab-mensaje-origen"></p>
                   <p id="lab-mensaje-cuerpo"></p>
+                  <div id="lab-registro" hidden></div>
                 </article>
               </div>
               <fieldset>
                 <legend>¿Qué señales identificas?</legend>
                 <div id="lab-indicadores" class="lab-indicators"></div>
+                <label for="lab-respuesta">Primera acción</label>
+                <select id="lab-respuesta" required>
+                  <option value="">Selecciona una respuesta</option>
+                  <option value="verificar">Verificar por un canal oficial</option>
+                  <option value="reportar">Reportar a seguridad y preservar la alerta</option>
+                  <option value="continuar">Continuar sin verificar</option>
+                </select>
                 <button class="button primary" type="submit">Analizar</button>
               </fieldset>
             </div>
           </form>
           <noscript><p>Activa JavaScript para practicar con el laboratorio.</p></noscript>
           <section id="lab-resultado" class="lab-result" aria-labelledby="lab-resultado-titulo" hidden>
-            <h4 id="lab-resultado-titulo" tabindex="-1"></h4>
+            <h2 id="lab-resultado-titulo" tabindex="-1"></h2>
             <p id="lab-nivel" class="lab-level"></p>
             <p id="lab-explicacion"></p>
             <ul id="lab-detalle"></ul>
             <p id="lab-recomendacion"></p>
+            <p id="lab-respuesta-resultado"></p>
             <p>El nivel describe el ejemplo y constituye una orientación educativa. Verifica cualquier situación real por un canal oficial.</p>
             <button class="button" id="lab-otro" type="button">Analizar otro caso</button>
           </section>
