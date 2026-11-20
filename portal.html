@@ -37,7 +37,7 @@
         <h3>Mis evidencias</h3>
         <dl class="panel-stats" id="mis-estadisticas"></dl>
         <button class="button primary" id="nueva" type="button">Subir nueva evidencia</button>
-        <div class="skill-grid" id="mis-evidencias"></div>
+        <div class="skill-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" id="mis-evidencias"></div>
       </section>
       <section class="coordinacion" id="coordinacion" hidden>
         <h3>Revisión del equipo</h3>
@@ -47,7 +47,7 @@
           <label>Unidad <select id="filtro-unidad"><option value="">Todas</option></select></label>
           <label>Estado <select id="filtro-estado"><option value="">Todos</option><option value="pending">Pendientes</option><option value="approved">Aprobadas</option><option value="rejected">Rechazadas</option></select></label>
         </div>
-        <div class="skill-grid" id="equipo-evidencias"></div>
+        <div class="skill-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" id="equipo-evidencias"></div>
       </section>
     </section>
     <dialog class="card portal-form" id="editor">
