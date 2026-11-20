@@ -38,3 +38,17 @@ Para demostrar el flujo de Git, muestra cómo usar `git status`, `git add <archi
 8. **¿Qué diferencia hay entre commit y push?** El commit registra un cambio en el historial local. El push envía commits a un repositorio remoto.
 9. **¿Qué hace Vercel en el proyecto?** Sirve los archivos estáticos del repositorio en una URL web.
 10. **¿Qué hizo la IA y qué hizo el equipo?** Describe una consulta real de la bitácora, qué verificaron los estudiantes y qué decisión o corrección hicieron.
+
+## Demostración de la ampliación sobre ciberseguridad
+
+Usen este reparto para una exposición de seis minutos que incluya el laboratorio.
+
+| Tiempo | Integrante | Qué mostrar |
+|---|---|---|
+| 0:00–1:00 | 1 | Presentar el problema de los fraudes y robos de información. Explicar el objetivo general y cómo se integra el contenido con el portafolio. |
+| 1:00–2:00 | 2 | Mostrar las seis amenazas. Usar phishing y ransomware para explicar una diferencia, un posible efecto y una medida de prevención. |
+| 2:00–3:00 | 3 | Recorrer el diagrama de IA y dar un ejemplo de falso positivo y falso negativo. |
+| 3:00–4:30 | 4 | Abrir el laboratorio, elegir **Promoción instantánea**, marcar una señal y pulsar **Analizar**. Explicar la diferencia entre la puntuación y el nivel del caso. |
+| 4:30–6:00 | 5 | Mostrar una práctica de protección, el portafolio y sus evidencias disponibles. Cerrar con GitHub y un aprendizaje real del equipo. |
+
+El laboratorio compara casillas con reglas escritas en JavaScript. Por ejemplo, si el caso de la promoción tiene tres señales y el visitante reconoce una, la interfaz muestra **1 de 3**. El nivel del caso sigue siendo **Múltiples señales**. Esta distinción permite explicar cómo se programó el resultado y por qué una puntuación baja del visitante jamás convierte el mensaje en seguro.

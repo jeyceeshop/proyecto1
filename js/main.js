@@ -177,7 +177,7 @@ document.addEventListener('keydown', evento => {
     menu.focus();
   }
 });
-matchMedia('(min-width: 1100px)').addEventListener('change', () => abrirMenu(false));
+matchMedia('(min-width: 1200px)').addEventListener('change', () => abrirMenu(false));
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 mostrarEquipo();
