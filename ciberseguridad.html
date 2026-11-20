@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio académico de Habilidades Digitales del ITSE Panamá.">
+  <title>Ciberseguridad e inteligencia artificial · ITSE</title>
+  <script src="js/tema.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="js/sitio.js" defer></script>
+  <script src="js/educacion.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html"><img src="img/recursos/escudo.svg" alt="" width="38" height="38"><span>AMENAZAS DIGITALES<small>ITSE PANAMÁ · HDI2000</small></span></a>
+      <div class="header-controls">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Tema claro" aria-pressed="false" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacion"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg><span>Menú</span></button>
+      </div>
+      <nav id="navegacion" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a><a href="ciberseguridad.html" aria-current="page">Ciberseguridad</a><a href="laboratorio.html">Laboratorio</a><a href="portafolio.html">Portafolio</a>
+        <a class="button small" href="portal.html">Portal de estudiantes</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="section education band" id="proyecto" aria-labelledby="proyecto-titulo">
+      <div class="wrap">
+        <div class="page-intro"><div><p class="eyebrow">Ciberseguridad aplicada</p>
+        <h1 id="proyecto-titulo">¿Qué es la detección inteligente de amenazas digitales?</h1>
+        <p class="intro">Es el uso de señales, reglas y, en algunos sistemas, inteligencia artificial para reconocer situaciones que podrían poner en riesgo nuestras cuentas, dispositivos o datos.</p></div><img src="img/recursos/analisis.svg" width="600" height="320" alt="Lupa sobre un circuito con señales conectadas"></div>
+        <nav class="education-nav" aria-label="Contenido de ciberseguridad">
+          <a href="#problema">El problema</a><a href="#amenazas">Amenazas</a><a href="#inteligencia-artificial">Inteligencia artificial</a><a href="laboratorio.html">Laboratorio</a><a href="#proteccion">Protección</a><a href="#glosario">Glosario</a>
+        </nav>
+        <div class="skill-grid">
+          <article class="card"><h3>Una amenaza pone algo en riesgo</h3><p>Un mensaje que intenta robar una contraseña o un archivo que altera el equipo pueden comprometer la privacidad, la disponibilidad de los datos o el control de una cuenta.</p></article>
+          <article class="card"><h3>Detectar es reconocer indicios</h3><p>Una dirección extraña, una solicitud inesperada o un inicio de sesión fuera de lo habitual merecen verificación. Cada indicio tiene que interpretarse en su contexto.</p></article>
+          <article class="card"><h3>Detectar temprano permite actuar</h3><p>Podemos evitar abrir un archivo, verificar un mensaje por un canal oficial o alertar al equipo de soporte antes de que el incidente se propague.</p></article>
+        </div>
+
+        <section class="education-block" id="problema" aria-labelledby="problema-titulo">
+          <h2 id="problema-titulo">El problema que buscamos abordar</h2>
+          <p>Usamos correo, redes sociales, servicios en línea y plataformas educativas a diario. En esos mismos espacios circulan fraudes, intentos de robo de información y descargas peligrosas. Un estudiante puede perder acceso al aula virtual, una persona puede sufrir un fraude y una empresa puede ver interrumpida su operación.</p>
+          <p>La educación digital ayuda a reconocer señales y verificar el origen antes de actuar. Los filtros y las alertas tecnológicas facilitan revisar lo urgente. El contexto y el criterio de las personas permiten decidir cómo responder.</p>
+          <div class="card objectives">
+            <h4>Objetivo general</h4>
+            <p>Desarrollar una plataforma web educativa que permita comprender las principales amenazas digitales y demostrar, mediante ejemplos interactivos, cómo pueden identificarse señales de riesgo utilizando criterios de seguridad digital y conceptos de inteligencia artificial.</p>
+            <h4>Objetivos específicos</h4>
+            <ol>
+              <li>Identificar las principales amenazas digitales presentes en Internet.</li>
+              <li>Explicar cómo funcionan el phishing, el malware, el ransomware y otras amenazas.</li>
+              <li>Comprender cómo la inteligencia artificial puede apoyar la detección de riesgos.</li>
+              <li>Promover buenas prácticas de protección de información.</li>
+              <li>Desarrollar una experiencia interactiva para reconocer situaciones sospechosas.</li>
+              <li>Aplicar los conocimientos adquiridos en HTML, Tailwind CSS y JavaScript.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="education-block" id="amenazas" aria-labelledby="amenazas-titulo">
+          <h2 id="amenazas-titulo">Conoce las principales amenazas digitales</h2>
+          <div id="tarjetas-amenazas" class="skill-grid"></div>
+        </section>
+
+        <section class="education-block" id="inteligencia-artificial" aria-labelledby="ia-titulo">
+          <h2 id="ia-titulo">¿Cómo ayuda la inteligencia artificial a detectar amenazas?</h2>
+          <p>Un sistema puede analizar grandes volúmenes de mensajes y registros, reconocer patrones sospechosos y señalar comportamientos anómalos, como un acceso en un horario inusual. También puede clasificar mensajes potencialmente fraudulentos y ayudar a los equipos de seguridad a priorizar alertas.</p>
+          <ol class="process-flow" aria-label="Proceso de detección asistida">
+            <li>Entrada de información</li><li>Análisis de características</li><li>Identificación de señales de riesgo</li><li>Resultado orientativo</li><li>Recomendación de seguridad</li>
+          </ol>
+          <div class="skill-grid detection-examples">
+            <article class="card"><h3>Señales del mensaje</h3><p>El sistema compara la dirección del remitente y las características del mensaje con reglas o patrones conocidos.</p></article>
+            <article class="card"><h3>Señales del comportamiento</h3><p>Un acceso inesperado o varios intentos fallidos pueden generar una alerta para verificar la actividad de la cuenta.</p></article>
+            <article class="card"><h3>Respuesta humana</h3><p>El equipo revisa las señales, confirma el contexto y decide si conviene reportar, bloquear o cerrar la alerta.</p></article>
+          </div>
+          <p>Un <strong>falso positivo</strong> ocurre cuando se señala una actividad legítima. Un <strong>falso negativo</strong> ocurre cuando una amenaza pasa inadvertida. La IA puede cometer ambos errores y no garantiza detectar todas las amenazas. Las alertas necesitan verificación humana.</p>
+        </section>
+
+        <aside class="card module-callout">
+          <h3>Pon a prueba lo aprendido</h3>
+          <p>Revisa seis mensajes ficticios e identifica las señales de riesgo.</p>
+          <a class="button primary" href="laboratorio.html">Ir al laboratorio</a>
+        </aside>
+
+        <section class="education-block" id="proteccion" aria-labelledby="proteccion-titulo">
+          <h2 id="proteccion-titulo">Protege tu información</h2>
+          <div id="tarjetas-proteccion" class="skill-grid"></div>
+        </section>
+
+        <section class="education-block" id="glosario" aria-labelledby="glosario-titulo">
+          <h2 id="glosario-titulo">Glosario de ciberseguridad</h2>
+          <div id="glosario-lista" class="glossary-grid"></div>
+        </section>
+
+        <section class="education-block" id="fuentes" aria-labelledby="fuentes-titulo">
+          <h2 id="fuentes-titulo">Fuentes y referencias</h2>
+          <p>Recursos institucionales para profundizar. La comprobación de los enlaces desde el entorno de desarrollo está pendiente.</p>
+          <ul class="source-list">
+            <li><a href="https://www.nist.gov/cyberframework">NIST · Cybersecurity Framework</a></li>
+            <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST · AI Risk Management Framework</a></li>
+            <li><a href="https://www.cisa.gov/secure-our-world">CISA · Secure Our World</a></li>
+            <li><a href="https://www.incibe.es/ciudadania">INCIBE · Ciberseguridad para la ciudadanía</a></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><p>© <span data-year></span> Detección Inteligente de Amenazas Digitales · ITSE · HDI2000</p><p>Hecho con HTML, Tailwind CSS y JavaScript, con apoyo de IA.</p><a href="#contenido">Volver arriba</a></footer>
+</body>
+</html>

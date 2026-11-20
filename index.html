@@ -8,36 +8,33 @@
   <script src="js/tema.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="estilos.css">
-  <script src="js/main.js" defer></script>
-  <script src="js/educacion.js" defer></script>
+  <script src="js/sitio.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#inicio">Saltar al contenido</a>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#inicio"><img src="img/recursos/escudo.svg" alt="" width="38" height="38"><span>AMENAZAS DIGITALES<small>ITSE PANAMÁ · HDI2000</small></span></a>
+      <a class="brand" href="index.html"><img src="img/recursos/escudo.svg" alt="" width="38" height="38"><span>AMENAZAS DIGITALES<small>ITSE PANAMÁ · HDI2000</small></span></a>
       <div class="header-controls">
       <button class="theme-toggle" data-theme-toggle type="button" aria-label="Tema claro" aria-pressed="false" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacion"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg><span>Menú</span></button>
       </div>
       <nav id="navegacion" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a><a href="#proyecto">Ciberseguridad</a><a href="#sobre-mi">Sobre nosotros</a><a href="#habilidades">Habilidades</a><a href="#evidencias">Evidencias</a><a href="#linea-de-tiempo">Línea de tiempo</a><a href="#reflexion">Reflexión</a><a href="#contacto">Contacto</a>
+        <a href="index.html" aria-current="page">Inicio</a><a href="ciberseguridad.html">Ciberseguridad</a><a href="laboratorio.html">Laboratorio</a><a href="portafolio.html">Portafolio</a>
         <a class="button small" href="portal.html">Portal de estudiantes</a>
       </nav>
     </div>
   </header>
-  <main>
+  <main id="contenido">
     <section class="hero" id="inicio" aria-labelledby="titulo">
       <div class="wrap hero-layout">
         <div class="hero-content">
-          <h2 class="eyebrow">Proyecto final 2026 · HDI2000</h2>
+          <p class="eyebrow">Proyecto final 2026 · HDI2000</p>
           <h1 id="titulo">Detección inteligente de <span>amenazas digitales</span></h1>
           <p class="hero-lead">Explorando la ciberseguridad, la inteligencia artificial y las habilidades digitales para construir un entorno tecnológico más seguro.</p>
           <div class="flex flex-wrap gap-3 hero-actions">
-            <a class="button primary" href="#laboratorio">Probar el laboratorio</a>
-            <a class="button" href="#sobre-mi">Conocer al equipo</a>
-            <a class="button" href="#evidencias">Ver evidencias</a>
-            <a class="text-link" href="portal.html">Acceder al portal</a>
+            <a class="button primary" href="laboratorio.html">Probar el laboratorio</a>
+            <a class="button" href="ciberseguridad.html">Explorar el tema</a>
           </div>
         </div>
         <figure class="hero-art">
@@ -51,169 +48,34 @@
         </dl>
       </div>
     </section>
-    <section class="section education band" id="proyecto" aria-labelledby="proyecto-titulo">
-      <div class="wrap">
-        <p class="eyebrow">Ciberseguridad aplicada</p>
-        <h2 id="proyecto-titulo">¿Qué es la detección inteligente de amenazas digitales?</h2>
-        <p class="intro">Es el uso de señales, reglas y, en algunos sistemas, inteligencia artificial para reconocer situaciones que podrían poner en riesgo nuestras cuentas, dispositivos o datos.</p>
-        <nav class="education-nav" aria-label="Contenido de ciberseguridad">
-          <a href="#problema">El problema</a><a href="#amenazas">Amenazas</a><a href="#inteligencia-artificial">Inteligencia artificial</a><a href="#laboratorio">Laboratorio</a><a href="#proteccion">Protección</a><a href="#glosario">Glosario</a>
-        </nav>
-        <div class="skill-grid">
-          <article class="card"><h3>Una amenaza pone algo en riesgo</h3><p>Un mensaje que intenta robar una contraseña o un archivo que altera el equipo pueden comprometer la privacidad, la disponibilidad de los datos o el control de una cuenta.</p></article>
-          <article class="card"><h3>Detectar es reconocer indicios</h3><p>Una dirección extraña, una solicitud inesperada o un inicio de sesión fuera de lo habitual merecen verificación. Cada indicio tiene que interpretarse en su contexto.</p></article>
-          <article class="card"><h3>Detectar temprano permite actuar</h3><p>Podemos evitar abrir un archivo, verificar un mensaje por un canal oficial o alertar al equipo de soporte antes de que el incidente se propague.</p></article>
-        </div>
-
-        <section class="education-block" id="problema" aria-labelledby="problema-titulo">
-          <h3 id="problema-titulo">El problema que buscamos abordar</h3>
-          <p>Usamos correo, redes sociales, servicios en línea y plataformas educativas a diario. En esos mismos espacios circulan fraudes, intentos de robo de información y descargas peligrosas. Un estudiante puede perder acceso al aula virtual, una persona puede sufrir un fraude y una empresa puede ver interrumpida su operación.</p>
-          <p>La educación digital ayuda a reconocer señales y verificar el origen antes de actuar. Los filtros y las alertas tecnológicas facilitan revisar lo urgente. El contexto y el criterio de las personas permiten decidir cómo responder.</p>
-          <div class="card objectives">
-            <h4>Objetivo general</h4>
-            <p>Desarrollar una plataforma web educativa que permita comprender las principales amenazas digitales y demostrar, mediante ejemplos interactivos, cómo pueden identificarse señales de riesgo utilizando criterios de seguridad digital y conceptos de inteligencia artificial.</p>
-            <h4>Objetivos específicos</h4>
-            <ol>
-              <li>Identificar las principales amenazas digitales presentes en Internet.</li>
-              <li>Explicar cómo funcionan el phishing, el malware, el ransomware y otras amenazas.</li>
-              <li>Comprender cómo la inteligencia artificial puede apoyar la detección de riesgos.</li>
-              <li>Promover buenas prácticas de protección de información.</li>
-              <li>Desarrollar una experiencia interactiva para reconocer situaciones sospechosas.</li>
-              <li>Aplicar los conocimientos adquiridos en HTML, Tailwind CSS y JavaScript.</li>
-            </ol>
-          </div>
-        </section>
-
-        <section class="education-block" id="amenazas" aria-labelledby="amenazas-titulo">
-          <h3 id="amenazas-titulo">Conoce las principales amenazas digitales</h3>
-          <div id="tarjetas-amenazas" class="skill-grid"></div>
-        </section>
-
-        <section class="education-block" id="inteligencia-artificial" aria-labelledby="ia-titulo">
-          <h3 id="ia-titulo">¿Cómo ayuda la inteligencia artificial a detectar amenazas?</h3>
-          <p>Un sistema puede analizar grandes volúmenes de mensajes y registros, reconocer patrones sospechosos y señalar comportamientos anómalos, como un acceso en un horario inusual. También puede clasificar mensajes potencialmente fraudulentos y ayudar a los equipos de seguridad a priorizar alertas.</p>
-          <ol class="process-flow" aria-label="Proceso de detección asistida">
-            <li>Entrada de información</li><li>Análisis de características</li><li>Identificación de señales de riesgo</li><li>Resultado orientativo</li><li>Recomendación de seguridad</li>
-          </ol>
-          <p>Un <strong>falso positivo</strong> ocurre cuando se señala una actividad legítima. Un <strong>falso negativo</strong> ocurre cuando una amenaza pasa inadvertida. La IA puede cometer ambos errores y no garantiza detectar todas las amenazas. Las alertas necesitan verificación humana.</p>
-        </section>
-
-        <section class="education-block lab card" id="laboratorio" aria-labelledby="lab-titulo">
-          <p class="eyebrow">Práctica interactiva</p>
-          <h3 id="lab-titulo">Laboratorio de detección de amenazas</h3>
-          <p>Lee un caso ficticio y marca las señales que reconoces. JavaScript compara tu selección con reglas programadas. El laboratorio no utiliza un modelo de IA ni solicita datos personales.</p>
-          <form id="lab-form" hidden>
-            <div class="lab-layout">
-              <div>
-                <label for="lab-caso">Caso de ejemplo</label>
-                <select id="lab-caso"></select>
-                <article class="lab-message" aria-labelledby="lab-mensaje-titulo">
-                  <h4 id="lab-mensaje-titulo"></h4>
-                  <p id="lab-mensaje-origen"></p>
-                  <p id="lab-mensaje-cuerpo"></p>
-                </article>
-              </div>
-              <fieldset>
-                <legend>¿Qué señales identificas?</legend>
-                <div id="lab-indicadores" class="lab-indicators"></div>
-                <button class="button primary" type="submit">Analizar</button>
-              </fieldset>
-            </div>
-          </form>
-          <noscript><p>Activa JavaScript para practicar con el laboratorio.</p></noscript>
-          <section id="lab-resultado" class="lab-result" aria-labelledby="lab-resultado-titulo" hidden>
-            <h4 id="lab-resultado-titulo" tabindex="-1"></h4>
-            <p id="lab-nivel" class="lab-level"></p>
-            <p id="lab-explicacion"></p>
-            <ul id="lab-detalle"></ul>
-            <p id="lab-recomendacion"></p>
-            <p>El nivel describe el ejemplo y constituye una orientación educativa. Verifica cualquier situación real por un canal oficial.</p>
-            <button class="button" id="lab-otro" type="button">Analizar otro caso</button>
-          </section>
-        </section>
-
-        <section class="education-block" id="proteccion" aria-labelledby="proteccion-titulo">
-          <h3 id="proteccion-titulo">Protege tu información</h3>
-          <div id="tarjetas-proteccion" class="skill-grid"></div>
-        </section>
-
-        <section class="education-block" id="glosario" aria-labelledby="glosario-titulo">
-          <h3 id="glosario-titulo">Glosario de ciberseguridad</h3>
-          <div id="glosario-lista" class="glossary-grid"></div>
-        </section>
-
-        <section class="education-block" id="fuentes" aria-labelledby="fuentes-titulo">
-          <h3 id="fuentes-titulo">Fuentes y referencias</h3>
-          <p>Recursos institucionales para profundizar. La comprobación de los enlaces desde el entorno de desarrollo está pendiente.</p>
-          <ul class="source-list">
-            <li><a href="https://www.nist.gov/cyberframework">NIST · Cybersecurity Framework</a></li>
-            <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST · AI Risk Management Framework</a></li>
-            <li><a href="https://www.cisa.gov/secure-our-world">CISA · Secure Our World</a></li>
-            <li><a href="https://www.incibe.es/ciudadania">INCIBE · Ciberseguridad para la ciudadanía</a></li>
-          </ul>
-        </section>
+    <section class="section wrap home-modules" aria-labelledby="explorar">
+      <h2 id="explorar">Explora el proyecto</h2>
+      <div class="module-grid">
+        <a class="module-card card" href="ciberseguridad.html">
+          <img src="img/recursos/analisis.svg" width="600" height="320" alt="" loading="lazy">
+          <div><h3>Ciberseguridad e IA</h3><p>Conoce las amenazas, cómo se detectan y qué papel cumplen las alertas automatizadas.</p><span>Explorar el tema <span aria-hidden="true">→</span></span></div>
+        </a>
+        <a class="module-card card" href="laboratorio.html">
+          <img src="img/recursos/mensaje.svg" width="600" height="320" alt="" loading="lazy">
+          <div><h3>Laboratorio de detección</h3><p>Analiza seis mensajes ficticios y aprende a reconocer sus señales de riesgo.</p><span>Probar los casos <span aria-hidden="true">→</span></span></div>
+        </a>
+        <a class="module-card card" href="portafolio.html">
+          <img src="img/recursos/archivo.svg" width="600" height="320" alt="" loading="lazy">
+          <div><h3>Portafolio académico</h3><p>Conoce al equipo del ITSE, sus habilidades digitales y sus evidencias aprobadas.</p><span>Ver el portafolio <span aria-hidden="true">→</span></span></div>
+        </a>
       </div>
     </section>
-    <section class="section wrap" id="sobre-mi">
-      <h2>Conoce a nuestro equipo</h2>
-      <p class="intro">Somos cinco estudiantes del ITSE. Este proyecto reúne lo aprendido sobre habilidades digitales y ciberseguridad a lo largo de la asignatura.</p>
-      <div id="equipo" class="team-grid"></div>
-    </section>
-    <section class="section band" id="habilidades">
+    <section class="section band home-flow">
       <div class="wrap">
-        <h2>Habilidades digitales</h2>
-        <div id="lista-habilidades" class="skill-grid"></div>
-      </div>
-    </section>
-    <section class="section wrap" id="evidencias">
-      <h2>Nuestras evidencias académicas</h2>
-      <p class="intro">Explora los trabajos aprobados por unidad.</p>
-      <details class="unit-guide">
-        <summary>Contenido de las cinco unidades</summary>
-        <ol>
-          <li><strong>Unidad I · Habilidades digitales.</strong> Historia de la computación y trabajo colaborativo.</li>
-          <li><strong>Unidad II · Web y seguridad digital.</strong> Búsqueda avanzada, seguridad y correo formal.</li>
-          <li><strong>Unidad III · Ofimática.</strong> Trabajos en Word, Excel y PowerPoint.</li>
-          <li><strong>Unidad IV · Algoritmos.</strong> PSeInt, condicionales, ciclos, vectores y matrices.</li>
-          <li><strong>Unidad V · Creación de contenido.</strong> Portafolio web y repositorio de GitHub.</li>
+        <h2>De la señal a la decisión</h2>
+        <ol class="process-flow">
+          <li><strong>Observa</strong><span>Revisa quién envía el mensaje y qué intenta que hagas.</span></li>
+          <li><strong>Verifica</strong><span>Confirma los datos en la aplicación o el sitio oficial.</span></li>
+          <li><strong>Actúa</strong><span>Si la solicitud es sospechosa, repórtala antes de interactuar.</span></li>
         </ol>
-      </details>
-      <div id="filtros" class="filters" role="group" aria-label="Filtrar evidencias por unidad"></div>
-      <p id="aviso-galeria" class="portal-status status-error" role="status" hidden>Algunas publicaciones no están disponibles. Intenta recargar la página.</p>
-      <p id="estado-evidencias" class="evidence-status" role="status"></p>
-      <div id="lista-evidencias" class="skill-grid"></div>
-    </section>
-    <section class="section band" id="linea-de-tiempo">
-      <div class="wrap">
-        <h2>Historia de la computación</h2>
-        <ol class="timeline">
-          <li><time datetime="1946">1946</time><div><h3>ENIAC</h3><p>Presentada públicamente como una de las primeras computadoras electrónicas digitales de propósito general.</p></div></li>
-          <li><time datetime="1951">1951</time><div><h3>UNIVAC I</h3><p>La Oficina del Censo de Estados Unidos recibió una de las primeras computadoras comerciales.</p></div></li>
-          <li><time datetime="1971">1971</time><div><h3>Intel 4004</h3><p>Intel lanzó un microprocesador comercial de cuatro bits con la CPU integrada en un solo chip.</p></div></li>
-          <li><time datetime="1981">1981</time><div><h3>IBM PC</h3><p>Su arquitectura marcó un estándar para gran parte del mercado de computadoras personales.</p></div></li>
-          <li><time datetime="1991">1991</time><div><h3>World Wide Web</h3><p>Tim Berners-Lee anunció públicamente el proyecto Web y su primer sitio, desarrollado en el CERN.</p></div></li>
-          <li><time datetime="2007">2007</time><div><h3>Expansión de los teléfonos inteligentes</h3><p>La llegada del iPhone aceleró la adopción de interfaces táctiles y la navegación web móvil.</p></div></li>
-          <li><time datetime="2022">2022</time><div><h3>Popularización de la IA generativa</h3><p>Herramientas accesibles al público extendieron el uso de modelos para generar texto e imágenes.</p></div></li>
-        </ol>
-      </div>
-    </section>
-    <section class="section wrap" id="reflexion">
-      <h2>Lo que nos llevamos</h2>
-      <div class="card reflection">
-        <h3>Reflexión grupal</h3>
-        <p>Pendiente de redactar por el equipo en tres a cinco líneas.</p>
-        <p>¿Qué aprendimos? ¿Qué fue lo más útil? ¿Qué dificultades tuvimos? ¿Cómo aplicaremos estas habilidades y cómo nos ayudó la IA?</p>
-      </div>
-      <div id="reflexiones" class="reflection-list"></div>
-    </section>
-    <section class="section band" id="contacto">
-      <div class="wrap">
-        <h2>Contacto</h2>
-        <div id="contactos" class="contact-list"></div>
-        <a class="button" href="https://github.com/jeyceeshop/proyecto1">Repositorio en GitHub</a>
       </div>
     </section>
   </main>
-  <footer class="wrap footer"><p>© <span data-year></span> Detección Inteligente de Amenazas Digitales · ITSE · HDI2000</p><p>Hecho con HTML, Tailwind CSS y JavaScript, con apoyo de IA.</p><a href="#inicio">Volver arriba</a></footer>
+  <footer class="wrap footer"><p>© <span data-year></span> Detección Inteligente de Amenazas Digitales · ITSE · HDI2000</p><p>Hecho con HTML, Tailwind CSS y JavaScript, con apoyo de IA.</p><a href="#contenido">Volver arriba</a></footer>
 </body>
 </html>

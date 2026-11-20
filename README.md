@@ -12,7 +12,11 @@ Como alternativa, ejecuta `python -m http.server 8000` desde la raíz y abre el 
 
 ## Editar el portafolio
 
-- `index.html` contiene las secciones, los datos del curso, la línea de tiempo y la reflexión grupal.
+- `index.html` es la portada del proyecto, con accesos ilustrados a los tres módulos.
+- `ciberseguridad.html` reúne la teoría, las amenazas y las referencias.
+- `laboratorio.html` contiene los seis casos interactivos.
+- `portafolio.html` reúne el equipo, las habilidades, la galería, la línea de tiempo, la reflexión y el contacto.
+- `js/sitio.js` comparte la navegación móvil, el año del pie y los enlaces a secciones entre páginas.
 - `estilos.css` contiene la paleta y los estilos responsive. Cambia `--acento` para modificar el cian del sitio.
 - `js/main.js` contiene los datos editables de los cinco integrantes, las habilidades y la galería. También controla el menú móvil, el año y los filtros.
 - `img/recursos/` contiene la ilustración, el logotipo y el avatar original. Guarda fotos autorizadas en `img/integrantes/` y vistas previas autorizadas en `img/evidencias/`.
@@ -44,7 +48,7 @@ El portal admite PDF, JPEG, PNG y WEBP de hasta 10 MB. El navegador comprueba la
 
 ## GitHub y Vercel
 
-Repositorio previsto: [jeyceeshop/proyecto1](https://github.com/jeyceeshop/proyecto1). Sitio compartido por el equipo: [portafolio en Vercel](https://proyecto1-nine-sandy.vercel.app/index.html#inicio). En Vercel, selecciona **Other**, la raíz del repositorio y deja el comando de compilación deshabilitado. Revisa ambas páginas, sus imágenes, el menú y los filtros en el dominio publicado.
+Repositorio previsto: [jeyceeshop/proyecto1](https://github.com/jeyceeshop/proyecto1). Sitio compartido por el equipo: [portafolio en Vercel](https://proyecto1-nine-sandy.vercel.app/index.html#inicio). En Vercel, selecciona **Other**, la raíz del repositorio y deja el comando de compilación deshabilitado. Revisa la portada, sus módulos, el portal, las imágenes, el menú y los filtros en el dominio publicado.
 
 El equipo registrará al menos diez commits descriptivos, distribuidos en tres o más días de trabajo real. Cada commit debe reflejar un aporte verificable, como completar una sección, incorporar contenido autorizado o corregir un problema de diseño.
 

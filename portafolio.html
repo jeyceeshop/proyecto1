@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio académico de Habilidades Digitales del ITSE Panamá.">
+  <title>Portafolio académico · ITSE</title>
+  <script src="js/tema.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="js/sitio.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html"><img src="img/recursos/escudo.svg" alt="" width="38" height="38"><span>AMENAZAS DIGITALES<small>ITSE PANAMÁ · HDI2000</small></span></a>
+      <div class="header-controls">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Tema claro" aria-pressed="false" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacion"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg><span>Menú</span></button>
+      </div>
+      <nav id="navegacion" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a><a href="ciberseguridad.html">Ciberseguridad</a><a href="laboratorio.html">Laboratorio</a><a href="portafolio.html" aria-current="page">Portafolio</a>
+        <a class="button small" href="portal.html">Portal de estudiantes</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="section band subpage-lead">
+      <div class="wrap page-intro"><div><p class="eyebrow">HDI2000 · ITSE Panamá</p>
+        <h1>Portafolio académico</h1><p class="intro">Conoce al equipo, las habilidades trabajadas y las evidencias aprobadas de este proyecto.</p>
+      </div><img src="img/recursos/archivo.svg" width="600" height="320" alt="Carpetas con trabajos académicos y una marca de revisión"></div>
+      <nav class="wrap education-nav section-nav" aria-label="Secciones del portafolio">
+        <a href="#sobre-mi">Equipo</a><a href="#habilidades">Habilidades</a><a href="#evidencias">Evidencias</a><a href="#linea-de-tiempo">Línea de tiempo</a><a href="#reflexion">Reflexión</a><a href="#contacto">Contacto</a>
+      </nav>
+    </section>
+    <section class="section wrap" id="sobre-mi">
+      <h2>Conoce a nuestro equipo</h2>
+      <p class="intro">Somos cinco estudiantes del ITSE. Este proyecto reúne lo aprendido sobre habilidades digitales y ciberseguridad a lo largo de la asignatura.</p>
+      <div id="equipo" class="team-grid"></div>
+    </section>
+    <section class="section band" id="habilidades">
+      <div class="wrap">
+        <h2>Habilidades digitales</h2>
+        <div id="lista-habilidades" class="skill-grid"></div>
+      </div>
+    </section>
+    <section class="section wrap" id="evidencias">
+      <h2>Nuestras evidencias académicas</h2>
+      <p class="intro">Explora los trabajos aprobados por unidad.</p>
+      <details class="unit-guide">
+        <summary>Contenido de las cinco unidades</summary>
+        <ol>
+          <li><strong>Unidad I · Habilidades digitales.</strong> Historia de la computación y trabajo colaborativo.</li>
+          <li><strong>Unidad II · Web y seguridad digital.</strong> Búsqueda avanzada, seguridad y correo formal.</li>
+          <li><strong>Unidad III · Ofimática.</strong> Trabajos en Word, Excel y PowerPoint.</li>
+          <li><strong>Unidad IV · Algoritmos.</strong> PSeInt, condicionales, ciclos, vectores y matrices.</li>
+          <li><strong>Unidad V · Creación de contenido.</strong> Portafolio web y repositorio de GitHub.</li>
+        </ol>
+      </details>
+      <div id="filtros" class="filters" role="group" aria-label="Filtrar evidencias por unidad"></div>
+      <p id="aviso-galeria" class="portal-status status-error" role="status" hidden>Algunas publicaciones no están disponibles. Intenta recargar la página.</p>
+      <p id="estado-evidencias" class="evidence-status" role="status"></p>
+      <div id="lista-evidencias" class="skill-grid"></div>
+    </section>
+    <section class="section band" id="linea-de-tiempo">
+      <div class="wrap">
+        <h2>Historia de la computación</h2>
+        <ol class="timeline">
+          <li><time datetime="1946">1946</time><div><h3>ENIAC</h3><p>Presentada públicamente como una de las primeras computadoras electrónicas digitales de propósito general.</p></div></li>
+          <li><time datetime="1951">1951</time><div><h3>UNIVAC I</h3><p>La Oficina del Censo de Estados Unidos recibió una de las primeras computadoras comerciales.</p></div></li>
+          <li><time datetime="1971">1971</time><div><h3>Intel 4004</h3><p>Intel lanzó un microprocesador comercial de cuatro bits con la CPU integrada en un solo chip.</p></div></li>
+          <li><time datetime="1981">1981</time><div><h3>IBM PC</h3><p>Su arquitectura marcó un estándar para gran parte del mercado de computadoras personales.</p></div></li>
+          <li><time datetime="1991">1991</time><div><h3>World Wide Web</h3><p>Tim Berners-Lee anunció públicamente el proyecto Web y su primer sitio, desarrollado en el CERN.</p></div></li>
+          <li><time datetime="2007">2007</time><div><h3>Expansión de los teléfonos inteligentes</h3><p>La llegada del iPhone aceleró la adopción de interfaces táctiles y la navegación web móvil.</p></div></li>
+          <li><time datetime="2022">2022</time><div><h3>Popularización de la IA generativa</h3><p>Herramientas accesibles al público extendieron el uso de modelos para generar texto e imágenes.</p></div></li>
+        </ol>
+      </div>
+    </section>
+    <section class="section wrap" id="reflexion">
+      <h2>Lo que nos llevamos</h2>
+      <div class="card reflection">
+        <h3>Reflexión grupal</h3>
+        <p>Pendiente de redactar por el equipo en tres a cinco líneas.</p>
+        <p>¿Qué aprendimos? ¿Qué fue lo más útil? ¿Qué dificultades tuvimos? ¿Cómo aplicaremos estas habilidades y cómo nos ayudó la IA?</p>
+      </div>
+      <div id="reflexiones" class="reflection-list"></div>
+    </section>
+    <section class="section band" id="contacto">
+      <div class="wrap">
+        <h2>Contacto</h2>
+        <div id="contactos" class="contact-list"></div>
+        <a class="button" href="https://github.com/jeyceeshop/proyecto1">Repositorio en GitHub</a>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><p>© <span data-year></span> Detección Inteligente de Amenazas Digitales · ITSE · HDI2000</p><p>Hecho con HTML, Tailwind CSS y JavaScript, con apoyo de IA.</p><a href="#contenido">Volver arriba</a></footer>
+</body>
+</html>

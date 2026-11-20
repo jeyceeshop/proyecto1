@@ -94,28 +94,31 @@
     return svg;
   }
 
-  amenazas.forEach(([nombre, descripcion, ejemplo, consecuencia, consejo], indice) => {
-    const tarjeta = crear('article', '', 'card skill-card');
-    tarjeta.append(icono(iconos[indice]), crear('h4', nombre), crear('p', descripcion));
-    const detalles = crear('dl', '', 'threat-details');
-    [['Ejemplo', ejemplo], ['Posible consecuencia', consecuencia], ['Prevención', consejo]].forEach(([titulo, texto]) => {
-      detalles.append(crear('dt', titulo), crear('dd', texto));
+  if ($('#tarjetas-amenazas')) {
+    amenazas.forEach(([nombre, descripcion, ejemplo, consecuencia, consejo], indice) => {
+      const tarjeta = crear('article', '', 'card skill-card');
+      tarjeta.append(icono(iconos[indice]), crear('h3', nombre), crear('p', descripcion));
+      const detalles = crear('dl', '', 'threat-details');
+      [['Ejemplo', ejemplo], ['Posible consecuencia', consecuencia], ['Prevención', consejo]].forEach(([titulo, texto]) => {
+        detalles.append(crear('dt', titulo), crear('dd', texto));
+      });
+      tarjeta.append(detalles);
+      $('#tarjetas-amenazas').append(tarjeta);
     });
-    tarjeta.append(detalles);
-    $('#tarjetas-amenazas').append(tarjeta);
-  });
-  protecciones.forEach(([titulo, texto], indice) => {
-    const tarjeta = crear('article', '', 'card skill-card');
-    tarjeta.append(icono(iconos[(indice + 6) % iconos.length]), crear('h4', titulo), crear('p', texto));
-    $('#tarjetas-proteccion').append(tarjeta);
-  });
-  glosario.forEach(([termino, significado]) => {
-    const entrada = crear('details', '', 'card');
-    entrada.append(crear('summary', termino), crear('p', significado));
-    $('#glosario-lista').append(entrada);
-  });
+    protecciones.forEach(([titulo, texto], indice) => {
+      const tarjeta = crear('article', '', 'card skill-card');
+      tarjeta.append(icono(iconos[(indice + 6) % iconos.length]), crear('h3', titulo), crear('p', texto));
+      $('#tarjetas-proteccion').append(tarjeta);
+    });
+    glosario.forEach(([termino, significado]) => {
+      const entrada = crear('details', '', 'card');
+      entrada.append(crear('summary', termino), crear('p', significado));
+      $('#glosario-lista').append(entrada);
+    });
+  }
 
   const formulario = $('#lab-form');
+  if (!formulario) return;
   const selector = $('#lab-caso');
   const resultado = $('#lab-resultado');
   const tituloResultado = $('#lab-resultado-titulo');
