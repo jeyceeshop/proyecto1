@@ -168,3 +168,46 @@ document.querySelector('[data-year]').textContent = new Date().getFullYear();
 mostrarEquipo();
 mostrarHabilidades();
 mostrarEvidencias('');
+
+// Marcar la sección que ha pasado por debajo del encabezado fijo.
+const enlacesDeSeccion = [...navegacion.querySelectorAll('a[href^="#"]')];
+const secciones = enlacesDeSeccion.map(enlace => document.querySelector(enlace.hash));
+const encabezado = document.querySelector('.site-header');
+let actualizacionPendiente = false;
+
+function actualizarSeccionActiva() {
+  actualizacionPendiente = false;
+  const limite = encabezado.getBoundingClientRect().bottom + 25;
+  const finalDePagina = window.scrollY > 0
+    && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+  const activa = finalDePagina
+    ? secciones.at(-1)
+    : secciones.findLast(seccion => seccion.getBoundingClientRect().top <= limite) || secciones[0];
+
+  enlacesDeSeccion.forEach(enlace => {
+    if (enlace.hash === '#' + activa.id) enlace.setAttribute('aria-current', 'location');
+    else enlace.removeAttribute('aria-current');
+  });
+}
+
+function programarActualizacion() {
+  if (actualizacionPendiente) return;
+  actualizacionPendiente = true;
+  requestAnimationFrame(actualizarSeccionActiva);
+}
+
+window.addEventListener('scroll', programarActualizacion, { passive: true });
+window.addEventListener('resize', programarActualizacion);
+actualizarSeccionActiva();
+
+// Animar los títulos una sola vez y respetar la preferencia de movimiento.
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observador = new IntersectionObserver(entradas => {
+    entradas.forEach(entrada => {
+      if (!entrada.isIntersecting) return;
+      entrada.target.classList.add('section-heading-enter');
+      observador.unobserve(entrada.target);
+    });
+  });
+  document.querySelectorAll('.section h2').forEach(titulo => observador.observe(titulo));
+}
