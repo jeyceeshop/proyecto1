@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio académico de Habilidades Digitales del ITSE Panamá.">
+  <meta name="description" content="Aprende cómo se detectan amenazas digitales y practica con seis casos ficticios en este proyecto académico del ITSE.">
   <title>Detección Inteligente de Amenazas Digitales · ITSE</title>
   <script src="js/tema.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="estilos.css">
   <script src="js/sitio.js" defer></script>
 </head>
-<body>
+<body class="home">
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -20,7 +20,7 @@
       <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacion"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg><span>Menú</span></button>
       </div>
       <nav id="navegacion" aria-label="Navegación principal">
-        <a href="index.html" aria-current="page">Inicio</a><a href="ciberseguridad.html">Ciberseguridad</a><a href="laboratorio.html">Laboratorio</a><a href="portafolio.html">Portafolio</a>
+        <a href="index.html" aria-current="page">Inicio</a><a href="ciberseguridad.html">Guía de amenazas</a><a href="ciberseguridad.html#datos-y-seguridad">Datos e IA</a><a href="laboratorio.html">Laboratorio</a><a href="portafolio.html">Portafolio</a>
         <a class="button small" href="portal.html">Portal de estudiantes</a>
       </nav>
     </div>
@@ -32,14 +32,13 @@
           <p class="eyebrow">Proyecto final 2026 · HDI2000</p>
           <h1 id="titulo">Detección inteligente de <span>amenazas digitales</span></h1>
           <p class="hero-lead">Un proyecto del ITSE que conecta el análisis de datos con la ciberseguridad para entender cómo se detectan y se revisan las amenazas digitales.</p>
-          <ul class="career-tags" aria-label="Carreras del equipo"><li>Big Data y Ciencia de Datos</li><li>Ciberseguridad</li></ul>
           <div class="flex flex-wrap gap-3 hero-actions">
             <a class="button primary" href="laboratorio.html">Probar el laboratorio</a>
-            <a class="button" href="ciberseguridad.html">Explorar el tema</a>
+            <a class="button" href="#como-funciona">Cómo se detecta una amenaza</a>
           </div>
         </div>
         <figure class="hero-art">
-          <img src="img/recursos/red.svg" width="640" height="520" alt="Escudo digital rodeado de conexiones y nodos de red">
+          <img src="img/recursos/monitoreo.svg" width="700" height="530" fetchpriority="high" alt="Ilustración de un panel con actividad de red, un pico atípico y un escudo de protección">
         </figure>
         <dl class="hero-meta">
           <div><dt>Institución</dt><dd>Instituto Técnico Superior Especializado</dd></div>
@@ -66,12 +65,16 @@
         </a>
       </div>
     </section>
-    <section class="section band" aria-labelledby="carreras-titulo">
-      <div class="wrap page-intro career-intro">
+    <section class="section band" id="como-funciona" aria-labelledby="deteccion-titulo">
+      <div class="wrap page-intro home-feature">
         <div>
-          <h2 id="carreras-titulo">Dos carreras, una pregunta: ¿qué nos dicen los datos?</h2>
-          <p><strong>Big Data y Ciencia de Datos</strong> organiza los registros, compara comportamientos y encuentra cambios que merece la pena investigar.</p>
-          <p><strong>Ciberseguridad</strong> interpreta esas señales, valida el contexto y decide cómo proteger las cuentas, los sistemas y la información.</p>
+          <h2 id="deteccion-titulo">¿Cuándo un pico de actividad merece una alerta?</h2>
+          <p>Un grupo de accesos fallidos puede aparecer por un error cotidiano o por un intento de entrar en una cuenta ajena. Comparar el cambio con el comportamiento habitual ayuda a decidir qué revisar.</p>
+          <ol class="feature-steps">
+            <li><strong>Reunir registros.</strong> Agrupar eventos de acceso y ordenar sus fechas.</li>
+            <li><strong>Detectar un cambio.</strong> Comparar el volumen reciente con el patrón habitual.</li>
+            <li><strong>Verificar el contexto.</strong> Revisar a qué cuentas afectó y si coincide con un fallo conocido.</li>
+          </ol>
           <a class="button" href="ciberseguridad.html#datos-y-seguridad">Ver un ejemplo de detección</a>
         </div>
         <figure>
@@ -80,7 +83,18 @@
         </figure>
       </div>
     </section>
-    <section class="section home-flow">
+    <section class="section wrap" aria-labelledby="senales-titulo">
+      <div class="page-intro home-feature signal-feature">
+        <figure><img src="img/recursos/senales.svg" width="640" height="385" alt="Ilustración de una lupa que revisa las señales de alerta en un mensaje" loading="lazy"></figure>
+        <div>
+          <h2 id="senales-titulo">Aprende a leer las señales de un mensaje</h2>
+          <p>Un remitente que imita una dirección conocida, un adjunto inesperado o una petición de códigos son motivos para detenerse y verificar.</p>
+          <p>En el laboratorio, elige un caso ficticio, marca las señales que encuentres y compara tu lectura con la explicación.</p>
+          <a class="button primary" href="laboratorio.html">Empezar el análisis</a>
+        </div>
+      </div>
+    </section>
+    <section class="section band home-flow">
       <div class="wrap">
         <h2>De la señal a la decisión</h2>
         <ol class="process-flow">

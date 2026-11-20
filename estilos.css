@@ -276,9 +276,28 @@ dialog::backdrop { background: #040b16b8; }
   .page-intro { grid-template-columns: 1.12fr 1fr; }
 }
 
-.career-tags { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 8px; }
-.career-tags li { padding: 6px 10px; border: 1px solid var(--borde); border-radius: 8px; color: var(--enlace); background: var(--superficie); font-size: .82rem; font-weight: 650; }
-.career-intro .button { margin-top: 18px; }
-.career-intro figure, .detection-data figure { min-width: 0; }
-.career-intro figcaption, .detection-data figcaption { margin-top: 7px; color: var(--secundario); font-size: .85rem; }
+.detection-data figure { min-width: 0; }
+.detection-data figcaption { margin-top: 7px; color: var(--secundario); font-size: .85rem; }
 .detection-data { margin-top: 16px; }
+
+/* Portada editorial y lectura de señales. */
+.home .hero {
+  background: radial-gradient(ellipse at 73% 37%, var(--resplandor), transparent 70%), var(--fondo);
+}
+.home .hero-art { margin: 0; }
+.home .hero-layout { gap: clamp(14px, 3vw, 45px); padding-top: clamp(40px, 6vw, 94px); }
+.home .hero-meta { margin-top: 0; }
+.home .hero-actions { margin-top: 24px; }
+.home .module-card { position: relative; }
+.home .module-card img { transition: filter .2s; }
+.home .module-card:hover img { filter: brightness(1.12); }
+.home-feature .button { margin-top: 18px; }
+.home-feature figure { min-width: 0; }
+.home-feature figcaption { margin-top: 7px; color: var(--secundario); font-size: .85rem; }
+.feature-steps { padding: 0; margin: 15px 0 0; list-style: none; color: var(--secundario); }
+.feature-steps li { padding: 7px 0 7px 13px; border-left: 2px solid var(--linea-tiempo); }
+.feature-steps strong { color: var(--texto); }
+.signal-feature img { aspect-ratio: 640 / 385; }
+@media (max-width: 719px) {
+  .signal-feature figure { order: 2; }
+}
