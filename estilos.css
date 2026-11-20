@@ -83,7 +83,7 @@ button { font: inherit; cursor: pointer; }
 .text-link:hover, .footer a:hover { text-decoration: underline; }
 .hero-art { display: grid; place-items: center; }
 .hero-art img { width: 100%; height: auto; }
-.hero-meta { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--borde); margin-top: 18px; padding: 20px 0 26px; gap: 16px; }
+.hero-meta { grid-column: 1 / -1; border-top: 1px solid var(--borde); padding: 20px 0 26px; }
 .hero-meta dt { color: var(--texto-etiqueta); text-transform: uppercase; font-size: .65rem; font-weight: 750; letter-spacing: .12em; }
 .hero-meta dd { font-weight: 650; font-size: .88rem; line-height: 1.4; margin-top: 5px; }
 section { scroll-margin-top: 85px; }
@@ -124,7 +124,6 @@ summary { cursor: pointer; color: var(--enlace); }
 @media (min-width: 620px) {
   .wrap { width: min(100% - 64px, 1280px); }
   .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero-meta { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (min-width: 900px) {
   .team-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
@@ -280,7 +279,6 @@ dialog::backdrop { background: #040b16b8; }
 .photo-credit { margin-top: 9px; color: var(--secundario); font-size: .82rem; }
 .photo-credit a { color: var(--enlace); text-decoration: underline; text-underline-offset: .16em; }
 .home .hero-layout { gap: clamp(14px, 3vw, 45px); padding-top: clamp(40px, 6vw, 94px); }
-.home .hero-meta { margin-top: 0; }
 .home .hero-actions { margin-top: 24px; }
 .home .module-card:focus-within { border-color: var(--acento); }
 .home-feedback { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
