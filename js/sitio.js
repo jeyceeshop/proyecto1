@@ -79,3 +79,10 @@ if (document.querySelector('.home-modules')) {
   };
   if (Object.hasOwn(rutas, seccion)) location.replace(rutas[seccion] + location.hash);
 }
+
+// Si una imagen externa se bloquea, conservar visible la ficha de procedencia.
+document.querySelectorAll('.timeline-figure img').forEach(imagen => {
+  const quitarImagenNoDisponible = () => { imagen.hidden = true; };
+  imagen.addEventListener('error', quitarImagenNoDisponible, { once: true });
+  if (imagen.complete && imagen.naturalWidth === 0) quitarImagenNoDisponible();
+});
