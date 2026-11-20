@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 350" fill="none">
+  <defs>
+    <linearGradient id="surface" x2="1" y2="1">
+      <stop stop-color="#102e54"/>
+      <stop offset="1" stop-color="#081527"/>
+    </linearGradient>
+    <linearGradient id="area" x2="0" y2="1">
+      <stop stop-color="#00d9ff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#00d9ff" stop-opacity=".04"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="350" rx="22" fill="url(#surface)"/>
+  <path d="M80 65v215h480M80 110h480M80 165h480M80 220h480" stroke="#365877" stroke-width="1.5"/>
+  <path d="M81 242l68-19 68 11 69-26 69 10 68-129 68 78 69 40v73H81Z" fill="url(#area)"/>
+  <path d="M81 242l68-19 68 11 69-26 69 10 68-129 68 78 69 40" stroke="#6deaff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M423 89v191m0-191h137" stroke="#ffdb8b" stroke-width="2" stroke-dasharray="5 7" opacity=".7"/>
+  <circle cx="423" cy="89" r="17" stroke="#ffdb8b" stroke-opacity=".5" stroke-width="2"/>
+  <circle cx="423" cy="89" r="7" fill="#ffdb8b"/>
+  <g fill="#88a9c6" font-family="system-ui, sans-serif" font-size="16">
+    <text x="81" y="50">Intentos de acceso fallidos</text>
+    <text x="81" y="313">Inicio</text>
+    <text x="513" y="313">Tiempo</text>
+  </g>
+  <text x="453" y="71" fill="#ffe3a0" font-family="system-ui, sans-serif" font-size="16">Pico inusual</text>
+</svg>

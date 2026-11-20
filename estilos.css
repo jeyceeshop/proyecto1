@@ -275,3 +275,10 @@ dialog::backdrop { background: #040b16b8; }
   .module-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .page-intro { grid-template-columns: 1.12fr 1fr; }
 }
+
+.career-tags { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.career-tags li { padding: 6px 10px; border: 1px solid var(--borde); border-radius: 8px; color: var(--enlace); background: var(--superficie); font-size: .82rem; font-weight: 650; }
+.career-intro .button { margin-top: 18px; }
+.career-intro figure, .detection-data figure { min-width: 0; }
+.career-intro figcaption, .detection-data figcaption { margin-top: 7px; color: var(--secundario); font-size: .85rem; }
+.detection-data { margin-top: 16px; }

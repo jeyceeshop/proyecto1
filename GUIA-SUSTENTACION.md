@@ -47,7 +47,7 @@ Usen este reparto para una exposición de seis minutos que incluya el laboratori
 |---|---|---|
 | 0:00–1:00 | 1 | Presentar el problema de los fraudes y robos de información. Explicar el objetivo general y cómo se integra el contenido con el portafolio. |
 | 1:00–2:00 | 2 | Mostrar las seis amenazas. Usar phishing y ransomware para explicar una diferencia, un posible efecto y una medida de prevención. |
-| 2:00–3:00 | 3 | Recorrer el diagrama de IA y dar un ejemplo de falso positivo y falso negativo. |
+| 2:00–3:00 | 3 | Mostrar el gráfico de intentos fallidos. Explicar cómo Big Data integra los registros, Ciencia de Datos identifica el pico y Ciberseguridad valida la alerta. Mencionar un posible falso positivo. |
 | 3:00–4:30 | 4 | Abrir el laboratorio, elegir **Promoción instantánea**, marcar una señal y pulsar **Analizar**. Explicar la diferencia entre la puntuación y el nivel del caso. |
 | 4:30–6:00 | 5 | Mostrar una práctica de protección, el portafolio y sus evidencias disponibles. Cerrar con GitHub y un aprendizaje real del equipo. |
 
