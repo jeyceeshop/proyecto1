@@ -172,3 +172,36 @@ summary { cursor: pointer; color: var(--enlace); }
     to { opacity: 1; transform: translateY(0); }
   }
 }
+
+/* Formularios y listas del portal privado. */
+.portal-content { padding-block: clamp(25px, 5vw, 60px); }
+.portal-content h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.04em; }
+.portal-content h2 { font-size: clamp(1.3rem, 4vw, 1.75rem); font-weight: 750; }
+.portal-content h3 { font-size: 1.2rem; font-weight: 750; }
+.portal-content h4 { margin: 0; font-size: 1.05rem; font-weight: 750; }
+.portal-content .header-inner, .panel-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.portal-status { min-height: 1.5em; color: var(--secundario); margin-block: 9px 16px; }
+.status-error { color: #fda4af !important; }
+.badge-approved { color: #6ee7b7 !important; }
+.badge-rejected { color: #fda4af !important; }
+:root[data-theme="claro"] :is(.status-error, .badge-rejected) { color: #a21b37 !important; }
+:root[data-theme="claro"] .badge-approved { color: #08764d !important; }
+.portal-form { width: min(100%, 34rem); }
+.portal-form form { display: grid; gap: 13px; margin-top: 12px; }
+.portal-form label, .review-filters label { display: grid; gap: 5px; font-weight: 650; }
+.portal-form input:not([type="checkbox"]), .portal-form select, .portal-form textarea, .review-filters select {
+  width: 100%; min-height: 44px; padding: 8px 12px; border-radius: 8px;
+  border: 1px solid var(--borde-control); background: var(--fondo); color: var(--texto); font: inherit;
+}
+.portal-form input[type="checkbox"] { accent-color: var(--azul); width: 20px; height: 20px; }
+.portal-form #campo-confirmacion { display: flex; align-items: flex-start; gap: 10px; }
+.portal-form input[type="checkbox"] { flex: none; }
+dialog.portal-form { color: var(--texto); max-width: calc(100% - 28px); max-height: 92dvh; margin: auto; }
+dialog::backdrop { background: #040b16b8; }
+.panel-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 116px), 1fr)); gap: 9px; margin-block: 14px; }
+.panel-stats .card { padding: 11px 14px; }
+.panel-stats dt { color: var(--secundario); font-size: .85rem; }
+.panel-stats dd { color: var(--acento); font-size: 1.35rem; font-weight: 750; }
+.panel-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.coordinacion { border-top: 1px solid var(--borde); margin-top: 26px; padding-top: 23px; }
+.review-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 9px; }

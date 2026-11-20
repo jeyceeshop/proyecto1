@@ -33,6 +33,8 @@ const unidades = {
 // Cada publicación autorizada incluye titulo, unidad, estudiante, descripcion, aprendizaje,
 // archivo y, si está disponible, vistaPrevia (una imagen autorizada con su texto alternativo).
 const evidenciasAprobadas = [];
+let publicacionesRemotas = [];
+let filtroActivo = '';
 
 function elemento(etiqueta, texto, clase) {
   const nodo = document.createElement(etiqueta);
@@ -104,7 +106,9 @@ const lista = document.querySelector('#lista-evidencias');
 const estado = document.querySelector('#estado-evidencias');
 
 function mostrarEvidencias(unidad) {
-  const visibles = evidenciasAprobadas.filter(evidencia => !unidad || evidencia.unidad === unidad);
+  filtroActivo = unidad;
+  const visibles = [...publicacionesRemotas, ...evidenciasAprobadas]
+    .filter(evidencia => !unidad || evidencia.unidad === unidad);
   lista.replaceChildren();
   lista.hidden = !visibles.length;
   estado.classList.toggle('empty', !visibles.length);
@@ -123,10 +127,21 @@ function mostrarEvidencias(unidad) {
       previa.alt = evidencia.textoVistaPrevia || `Vista previa de ${evidencia.titulo}`;
       previa.loading = 'lazy';
     }
+    const abrir = enlace('Ver evidencia', evidencia.archivo, 'button');
+    if (evidencia.renovar) abrir.addEventListener('click', async evento => {
+      evento.preventDefault();
+      try {
+        const { data, error } = await evidencia.renovar();
+        if (error) throw error;
+        location.assign(data.signedUrl);
+      } catch {
+        document.querySelector('#aviso-galeria').hidden = false;
+      }
+    });
     tarjeta.append(previa, elemento('h3', evidencia.titulo),
       elemento('p', `Unidad ${evidencia.unidad} — ${unidades[evidencia.unidad]} · ${evidencia.estudiante}`),
       elemento('p', evidencia.descripcion), elemento('p', `Lo que aprendí: ${evidencia.aprendizaje}`),
-      enlace('Ver evidencia', evidencia.archivo, 'button'));
+      abrir);
     lista.append(tarjeta);
   });
 }
@@ -211,3 +226,36 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
   });
   document.querySelectorAll('.section h2').forEach(titulo => observador.observe(titulo));
 }
+
+// Las copias se sirven desde el bucket de publicaciones con acceso de solo lectura.
+async function cargarPublicaciones() {
+  try {
+    const { conectarSupabase } = await import('./supabase-config.js');
+    const cliente = await conectarSupabase();
+    if (!cliente) return;
+    const { data, error } = await cliente.from('approved_evidences').select('*');
+    if (error) throw error;
+    const bucket = cliente.storage.from('evidencias-publicadas');
+    const items = await Promise.all(data.map(async item => {
+      const { data: archivo, error: errorArchivo } = await bucket.createSignedUrl(item.file_path, 90);
+      if (errorArchivo) return null;
+      return {
+        titulo: item.title,
+        unidad: item.unit,
+        estudiante: item.full_name,
+        descripcion: item.description,
+        aprendizaje: item.learning,
+        archivo: archivo.signedUrl,
+        vistaPrevia: item.file_type.startsWith('image/') ? archivo.signedUrl : '',
+        renovar: () => bucket.createSignedUrl(item.file_path, 90),
+      };
+    }));
+    publicacionesRemotas = items.filter(Boolean);
+    document.querySelector('#aviso-galeria').hidden = items.every(Boolean);
+    mostrarEvidencias(filtroActivo);
+  } catch {
+    document.querySelector('#aviso-galeria').hidden = false;
+  }
+}
+
+if (location.protocol !== 'file:') cargarPublicaciones();

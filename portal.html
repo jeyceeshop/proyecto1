@@ -7,15 +7,72 @@
   <script src="js/tema.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="estilos.css">
+  <script type="module" src="js/portal.js"></script>
 </head>
 <body>
-  <main class="wrap portal">
-    <section class="card portal-card" aria-labelledby="titulo">
-      <img src="img/recursos/escudo.svg" alt="" width="58" height="58">
-      <h1 id="titulo">Portal de evidencias</h1>
-      <p>La autenticación está pendiente de configuración. Cuando esté habilitada, cada integrante podrá consultar el estado de sus trabajos y el coordinador podrá revisarlos antes de publicarlos.</p>
-      <a class="button primary" href="index.html">Volver al portafolio</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html"><img src="img/recursos/escudo.svg" alt="" width="38" height="38"><span>AMENAZAS DIGITALES<small>ITSE PANAMÁ · HDI2000</small></span></a>
+      <a class="button small" href="index.html">Volver al portafolio</a>
+    </div>
+  </header>
+  <main class="wrap portal-content">
+    <h1>Portal de evidencias</h1>
+    <p id="portal-status" class="portal-status" role="status" aria-live="polite">Comprobando la configuración del portal…</p>
+    <section class="card portal-form" id="acceso" hidden>
+      <h2>Acceso de estudiantes</h2>
+      <p>Usa la cuenta asignada por el equipo.</p>
+      <form id="login">
+        <label>Correo <input name="correo" type="email" autocomplete="username" required></label>
+        <label>Contraseña <input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="button primary" type="submit">Iniciar sesión</button>
+      </form>
     </section>
+    <section id="panel" hidden>
+      <div class="panel-heading">
+        <h2 id="bienvenida"></h2>
+        <button class="button" id="salir" type="button">Cerrar sesión</button>
+      </div>
+      <section>
+        <h3>Mis evidencias</h3>
+        <dl class="panel-stats" id="mis-estadisticas"></dl>
+        <button class="button primary" id="nueva" type="button">Subir nueva evidencia</button>
+        <div class="skill-grid" id="mis-evidencias"></div>
+      </section>
+      <section class="coordinacion" id="coordinacion" hidden>
+        <h3>Revisión del equipo</h3>
+        <dl class="panel-stats" id="equipo-estadisticas"></dl>
+        <div class="review-filters">
+          <label>Integrante <select id="filtro-estudiante"><option value="">Todos</option></select></label>
+          <label>Unidad <select id="filtro-unidad"><option value="">Todas</option></select></label>
+          <label>Estado <select id="filtro-estado"><option value="">Todos</option><option value="pending">Pendientes</option><option value="approved">Aprobadas</option><option value="rejected">Rechazadas</option></select></label>
+        </div>
+        <div class="skill-grid" id="equipo-evidencias"></div>
+      </section>
+    </section>
+    <dialog class="card portal-form" id="editor">
+      <form id="form-evidencia">
+        <h2 id="editor-titulo">Nueva evidencia</h2>
+        <label>Título <input name="titulo" maxlength="150" required></label>
+        <label>Unidad <select name="unidad" required><option value="">Seleccionar</option></select></label>
+        <label>Descripción del trabajo <textarea name="descripcion" maxlength="2000" rows="3" required></textarea></label>
+        <label>Qué aprendí <textarea name="aprendizaje" maxlength="2000" rows="3" required></textarea></label>
+        <label id="campo-archivo">Archivo (PDF, JPEG, PNG, WEBP; hasta 10 MB)
+          <input name="archivo" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp" required>
+        </label>
+        <p id="editor-estado" role="status"></p>
+        <div class="panel-actions"><button class="button primary" type="submit">Guardar evidencia</button><button class="button" type="button" data-close="editor">Cancelar</button></div>
+      </form>
+    </dialog>
+    <dialog class="card portal-form" id="revision">
+      <form id="form-revision">
+        <h2 id="revision-titulo">Revisar evidencia</h2>
+        <label id="campo-confirmacion"><input type="checkbox" name="confirmacion"> Revisé el archivo y sus textos. No contienen cédulas, teléfonos, direcciones ni datos de terceros que no deban publicarse.</label>
+        <label id="campo-motivo">Motivo <textarea name="motivo" maxlength="1000" rows="3"></textarea></label>
+        <p id="revision-estado" role="status"></p>
+        <div class="panel-actions"><button class="button primary" type="submit">Confirmar decisión</button><button class="button" type="button" data-close="revision">Cancelar</button></div>
+      </form>
+    </dialog>
   </main>
 </body>
 </html>

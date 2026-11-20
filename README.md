@@ -16,14 +16,31 @@ Como alternativa, ejecuta `python -m http.server 8000` desde la raíz y abre el 
 - `estilos.css` contiene la paleta y los estilos responsive. Cambia `--acento` para modificar el cian del sitio.
 - `js/main.js` contiene los datos editables de los cinco integrantes, las habilidades y la galería. También controla el menú móvil, el año y los filtros.
 - `img/recursos/` contiene la ilustración, el logotipo y el avatar original. Guarda fotos autorizadas en `img/integrantes/` y vistas previas autorizadas en `img/evidencias/`.
-- `portal.html` indica el estado de la integración privada.
+- `portal.html` y `js/portal.js` contienen el acceso y los paneles de estudiante y coordinación.
+- `js/supabase-config.js` conecta el navegador y `supabase/schema.sql` instala las tablas, políticas y buckets.
 - [Guía de sustentación](GUIA-SUSTENTACION.md) y [plantilla de bitácora de IA](PLANTILLA-BITACORA-IA.md).
 
 Para publicar datos del equipo, completa los campos de `equipo` en `js/main.js` con la autorización de cada persona. Para agregar una evidencia autorizada por el coordinador, guarda el PDF o la imagen en `docs/` y añade un objeto a `evidenciasAprobadas` con los campos `titulo`, `unidad` (I a V), `estudiante`, `descripcion`, `aprendizaje` y `archivo`. Puedes incluir `vistaPrevia` y `textoVistaPrevia`. Todo archivo dentro del sitio publicado puede ser accesible por su URL. Revisa los archivos antes de incorporarlos y mantén los originales privados fuera del sitio.
 
 ## Portal y seguridad
 
-La integración con Supabase requiere autorización, la URL del proyecto, una clave pública de navegador y la configuración administrativa de las cuentas, las políticas RLS, el almacenamiento privado y las URLs permitidas de autenticación. El portal incluirá acceso controlado de estudiantes, carga de evidencias y revisión por el coordinador. Las credenciales administrativas se conservan fuera del frontend.
+El portafolio público funciona con el listado local mientras falte la configuración de Supabase. El portal habilita el formulario de acceso cuando están configurados la URL del proyecto y su clave pública.
+
+1. Crea un proyecto Supabase y ejecuta `supabase/schema.sql` una vez en **SQL Editor** antes de cargar datos.
+2. En **Authentication**, desactiva el registro público, configura el dominio de Vercel como **Site URL** y permite únicamente las URLs locales y de producción que utilizarás para flujos de Auth. La recuperación de contraseña desde el portal queda pendiente.
+3. Crea las cinco cuentas desde **Authentication → Users** mediante el flujo administrativo. Comparte el acceso de manera individual. Para cada cuenta, ejecuta la siguiente consulta desde el editor SQL sustituyendo el UUID, nombre y carrera. Usa el rol `coordinator` para la persona designada y `student` para las otras cuatro.
+
+   ```sql
+   insert into public.profiles (id, full_name, career, role)
+   values ('UUID_DE_AUTH', 'Nombre autorizado', 'Carrera', 'student');
+   ```
+
+4. Completa `url` y `clavePublica` en `js/supabase-config.js` con la URL de la API y la clave publicable para navegador. Mantén las claves secretas y las contraseñas fuera de Git y del frontend.
+5. Ejecuta las comprobaciones del final de este documento antes de publicar trabajos reales.
+
+Los archivos originales están en un bucket privado, con lectura para el dueño y coordinación. La galería utiliza un segundo bucket privado que permite acceso a las copias aprobadas mediante enlaces firmados de 90 segundos. Retirar una publicación detiene la emisión de enlaces nuevos. Los emitidos anteriormente funcionan hasta su vencimiento. La copia retirada permanece privada y puede conservarse o limpiarse desde la administración.
+
+El portal admite PDF, JPEG, PNG y WEBP de hasta 10 MB. El navegador comprueba la firma inicial del archivo. Storage limita el MIME declarado y el tamaño. Revisar el contenido antes de publicar sigue siendo responsabilidad de coordinación.
 
 ## GitHub y Vercel
 
