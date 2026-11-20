@@ -52,10 +52,10 @@ Repositorio previsto: [jeyceeshop/proyecto1](https://github.com/jeyceeshop/proye
 
 El equipo registrará al menos diez commits descriptivos, distribuidos en tres o más días de trabajo real. Cada commit debe reflejar un aporte verificable, como completar una sección, incorporar contenido autorizado o corregir un problema de diseño.
 
-## Puntos extra de la portada
+## Puntos extra del sitio
 
 - **Animaciones suaves.** El encabezado y su fotografía aparecen de forma escalonada. Las tarjetas se elevan al pasar el puntero o al recibir el foco. Con la preferencia de movimiento reducido se desactivan estas animaciones y se conserva la indicación visual del foco.
-- **Fotografías reales y accesibles.** Se incluyen dos fotos de la documentación oficial de Raspberry Pi, alojadas en el proyecto como WebP. Ambas tienen texto alternativo en español y créditos visibles.
+- **Fotografías reales y accesibles.** La guía de ciberseguridad incluye dos fotos de la documentación oficial de Raspberry Pi en la sección de hardware para IA, alojadas en el proyecto como WebP. Ambas tienen texto alternativo en español y créditos visibles.
 - **Comentarios.** El enlace a [GitHub Issues](https://github.com/jeyceeshop/proyecto1/issues) permite consultar conversaciones y abrir un issue para sugerencias o errores con una cuenta de GitHub. Los comentarios son públicos.
 
 | Fotografía | Crédito y fuente | Adaptación |
