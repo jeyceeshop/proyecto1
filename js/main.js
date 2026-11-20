@@ -32,17 +32,6 @@ const unidades = {
 
 // Cada publicación autorizada incluye titulo, unidad, estudiante, descripcion, aprendizaje,
 // archivo y, si está disponible, vistaPrevia (una imagen autorizada con su texto alternativo).
-const evidenciaDemostracion = {
-  titulo: 'Revisión de una alerta de inicio de sesión',
-  unidad: 'V',
-  estudiante: 'Ejemplo del laboratorio',
-  descripcion: 'Captura del análisis de un pico de intentos de acceso fallidos con datos ficticios.',
-  aprendizaje: 'Conviene comprobar el contexto y confirmar el acceso antes de clasificar un evento como incidente.',
-  archivo: 'img/evidencias/demo-laboratorio.png',
-  vistaPrevia: 'img/evidencias/demo-laboratorio.png',
-  textoVistaPrevia: 'Resultado del laboratorio para el caso Pico de accesos fallidos',
-};
-
 const evidenciasAprobadas = [];
 let publicacionesRemotas = [];
 let filtroActivo = '';
@@ -128,36 +117,33 @@ function mostrarEvidencias(unidad) {
     : unidad ? `Aún no hay evidencias aprobadas en la Unidad ${unidad} — ${unidades[unidad]}.`
       : 'Aún no hay evidencias aprobadas. Aquí aparecerán los trabajos autorizados para su publicación.';
 
-  lista.append(...visibles.map(crearTarjetaEvidencia));
-  document.querySelector('#ejemplo-evidencia').hidden = Boolean(unidad && unidad !== evidenciaDemostracion.unidad);
-}
-
-function crearTarjetaEvidencia(evidencia) {
-  const tarjeta = elemento('article', '', 'card evidence-card');
-  const previa = evidencia.vistaPrevia
-    ? elemento('img', '', 'evidence-preview')
-    : elemento('div', 'Documento académico', 'evidence-preview');
-  if (evidencia.vistaPrevia) {
-    previa.src = evidencia.vistaPrevia;
-    previa.alt = evidencia.textoVistaPrevia || `Vista previa de ${evidencia.titulo}`;
-    previa.loading = 'lazy';
-  }
-  const abrir = enlace('Ver evidencia', evidencia.archivo, 'button');
-  if (evidencia.renovar) abrir.addEventListener('click', async evento => {
-    evento.preventDefault();
-    try {
-      const { data, error } = await evidencia.renovar();
-      if (error) throw error;
-      location.assign(data.signedUrl);
-    } catch {
-      document.querySelector('#aviso-galeria').hidden = false;
+  visibles.forEach(evidencia => {
+    const tarjeta = elemento('article', '', 'card evidence-card');
+    const previa = evidencia.vistaPrevia
+      ? elemento('img', '', 'evidence-preview')
+      : elemento('div', 'Documento académico', 'evidence-preview');
+    if (evidencia.vistaPrevia) {
+      previa.src = evidencia.vistaPrevia;
+      previa.alt = evidencia.textoVistaPrevia || `Vista previa de ${evidencia.titulo}`;
+      previa.loading = 'lazy';
     }
+    const abrir = enlace('Ver evidencia', evidencia.archivo, 'button');
+    if (evidencia.renovar) abrir.addEventListener('click', async evento => {
+      evento.preventDefault();
+      try {
+        const { data, error } = await evidencia.renovar();
+        if (error) throw error;
+        location.assign(data.signedUrl);
+      } catch {
+        document.querySelector('#aviso-galeria').hidden = false;
+      }
+    });
+    tarjeta.append(previa, elemento('h3', evidencia.titulo),
+      elemento('p', `Unidad ${evidencia.unidad} — ${unidades[evidencia.unidad]} · ${evidencia.estudiante}`),
+      elemento('p', evidencia.descripcion), elemento('p', `Lo que aprendí: ${evidencia.aprendizaje}`),
+      abrir);
+    lista.append(tarjeta);
   });
-  tarjeta.append(previa, elemento('h3', evidencia.titulo),
-    elemento('p', `Unidad ${evidencia.unidad} — ${unidades[evidencia.unidad]} · ${evidencia.estudiante}`),
-    elemento('p', evidencia.descripcion), elemento('p', `Lo que aprendí: ${evidencia.aprendizaje}`),
-    abrir);
-  return tarjeta;
 }
 
 ['', ...Object.keys(unidades)].forEach(unidad => {
@@ -176,7 +162,6 @@ filtros.addEventListener('click', evento => {
 
 mostrarEquipo();
 mostrarHabilidades();
-document.querySelector('#tarjeta-demostracion').append(crearTarjetaEvidencia(evidenciaDemostracion));
 mostrarEvidencias('');
 
 // Las copias se sirven desde el bucket de publicaciones con acceso de solo lectura.

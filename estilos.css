@@ -322,6 +322,3 @@ dialog::backdrop { background: #040b16b8; }
 @media (min-width: 720px) {
   .timeline li > .timeline-card { grid-template-columns: minmax(0, 270px) 1fr; align-items: center; gap: 20px; }
 }
-
-.evidence-demo { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--borde); }
-.evidence-demo > h3 { font-size: 1.15rem; font-weight: 750; }
