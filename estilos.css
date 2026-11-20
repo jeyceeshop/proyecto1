@@ -252,7 +252,7 @@ dialog::backdrop { background: #040b16b8; }
 
 /* Portada y entradas visuales a cada módulo. */
 .module-grid { display: grid; gap: 18px; margin-top: 25px; }
-.module-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
+.module-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .module-card > img { width: 100%; height: auto; aspect-ratio: 600 / 320; border-radius: 0; }
 .module-card > div { padding: 19px; flex: 1; display: flex; flex-direction: column; }
 .module-card h3 { font-size: 1.25rem; }
@@ -284,13 +284,24 @@ dialog::backdrop { background: #040b16b8; }
 .home .hero {
   background: radial-gradient(ellipse at 73% 37%, var(--resplandor), transparent 70%), var(--fondo);
 }
-.home .hero-art { margin: 0; }
+.home .hero-art { margin: 0; justify-items: start; }
+.photo-credit { margin-top: 9px; color: var(--secundario); font-size: .82rem; }
+.photo-credit a { color: var(--enlace); text-decoration: underline; text-underline-offset: .16em; }
 .home .hero-layout { gap: clamp(14px, 3vw, 45px); padding-top: clamp(40px, 6vw, 94px); }
 .home .hero-meta { margin-top: 0; }
 .home .hero-actions { margin-top: 24px; }
-.home .module-card { position: relative; }
-.home .module-card img { transition: filter .2s; }
-.home .module-card:hover img { filter: brightness(1.12); }
+.home .module-card:focus-within { border-color: var(--acento); }
+.home-feedback { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.home-feedback .button { color: var(--enlace); }
+@media (prefers-reduced-motion: no-preference) {
+  .home .hero-content, .home .hero-art { animation: entrada-seccion 540ms ease-out both; }
+  .home .hero-art { animation-delay: 100ms; }
+  .home .module-card { transition: transform 220ms ease-out, border-color 220ms; }
+  .home .module-card:focus-within { transform: translateY(-4px); }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .home .module-card:hover { transform: translateY(-4px); }
+}
 .home-feature .button { margin-top: 18px; }
 .home-feature figure { min-width: 0; }
 .home-feature figcaption { margin-top: 7px; color: var(--secundario); font-size: .85rem; }

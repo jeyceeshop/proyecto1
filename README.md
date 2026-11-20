@@ -52,6 +52,19 @@ Repositorio previsto: [jeyceeshop/proyecto1](https://github.com/jeyceeshop/proye
 
 El equipo registrará al menos diez commits descriptivos, distribuidos en tres o más días de trabajo real. Cada commit debe reflejar un aporte verificable, como completar una sección, incorporar contenido autorizado o corregir un problema de diseño.
 
+## Puntos extra de la portada
+
+- **Animaciones suaves.** El encabezado y su fotografía aparecen de forma escalonada. Las tarjetas se elevan al pasar el puntero o al recibir el foco. Con la preferencia de movimiento reducido se desactivan estas animaciones y se conserva la indicación visual del foco.
+- **Fotografías reales y accesibles.** Se incluyen dos fotos de la documentación oficial de Raspberry Pi, alojadas en el proyecto como WebP. Ambas tienen texto alternativo en español y créditos visibles.
+- **Comentarios.** El enlace a [GitHub Issues](https://github.com/jeyceeshop/proyecto1/issues) permite consultar conversaciones y abrir un issue para sugerencias o errores con una cuenta de GitHub. Los comentarios son públicos.
+
+| Fotografía | Crédito y fuente | Adaptación |
+|---|---|---|
+| Raspberry Pi AI HAT+ | [Raspberry Pi](https://github.com/raspberrypi/documentation/blob/97485d9742bcd15765f208d8c01735d74d542650/documentation/asciidoc/accessories/ai-hat-plus/images/ai-hat-plus-hero.jpg) | Conversión a WebP |
+| Raspberry Pi 400 | [Raspberry Pi](https://github.com/raspberrypi/documentation/blob/97485d9742bcd15765f208d8c01735d74d542650/documentation/asciidoc/computers/keyboard-computers/images/rpi400.jpg) | Recorte, reducción y conversión a WebP |
+
+Las dos fotografías y sus versiones WebP se distribuyen bajo [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
 ## Uso de inteligencia artificial
 
 Se utilizó IA como apoyo para planificar y construir la primera versión del portafolio. La temática incluye IA aplicada a la ciberseguridad. El sitio presenta contenido académico y su galería organiza evidencias por unidad.
@@ -90,4 +103,4 @@ El laboratorio usa JavaScript puro en `js/educacion.js`. Un selector carga ocho 
 
 Se trata de una demostración basada en reglas. Al desarrollarla se aplicaron conceptos de eventos del DOM, renderizado de resultados, modelado de señales y accesibilidad con controles de formulario y foco en el resultado. Un proyecto posterior con IA requeriría un servicio de análisis separado, datos autorizados y minimizados, validación con ejemplos etiquetados, medición de falsos positivos y negativos y revisión humana. Las credenciales de ese servicio se manejarían en el servidor.
 
-Las imágenes de estilo fotográfico se generaron para ilustrar el contexto del proyecto. Las personas y los espacios representados no corresponden al equipo del ITSE. El laboratorio incluye comunicaciones y registros de acceso ficticios. El visitante revisa el contexto, marca los indicios y elige una acción antes de consultar el resultado.
+Las ilustraciones generadas con IA muestran escenas ficticias y se usan para contextualizar el proyecto. Las fotografías de Raspberry Pi se acreditan en la sección de puntos extra. El laboratorio incluye comunicaciones y registros de acceso ficticios. El visitante revisa el contexto, marca los indicios y elige una acción antes de consultar el resultado.
